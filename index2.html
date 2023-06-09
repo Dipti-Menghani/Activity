@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <script>
+        fetch("https://run.mocky.io/v3/9b184f9d-bf48-4467-9d8f-137ea0eba817").then((response) => response.json()).then((data1) => { 
+            console.log(data1);
+            document.write("<h1>Registered Employees</h1>")
+            document.write("<table><tr><th>name</th><th>Office</th><th>Position</th><th>salary</th></tr>")
+            for(var i in `${data1.data}`){
+                // document.write(data1.data);
+                document.write("<tr><td>"+`${data1.data[i].name}`+"</td>");
+                document.write("<td>"+`${data1.data[i].office}`+"</td>");
+                document.write("<td>"+`${data1.data[i].position}`+"</td>"); 
+                document.write("<td>"+`${data1.data[i].salary}`+"</td></tr>");
+
+
+            
+            }
+            
+        })
+        document.write("</table>");
+       
+
+    </script>
+</body>
+
+</html>
